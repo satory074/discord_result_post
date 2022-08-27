@@ -25,11 +25,16 @@ function main(e) {
 
     // Check updated contest data
     if (contest_name !== user_latest_contest_name){
+      let contest_screen_name = latest_contest.ContestScreenName
+      contest_screen_name = contest_screen_name.split('.')[0]
+      let shared_link = `https://atcoder.jp/users/satory074/history/share/${contest_screen_name}`
+
       let content = `[${username}]
   Contest: ${contest_name}
   Place: ${place}
   Performance: ${performance}
   Rating: ${old_rating} -> ${new_rating} (${diff})
+  Shared Link: ${shared_link}
       `;
 
       // Post data
